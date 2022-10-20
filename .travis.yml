@@ -13,10 +13,11 @@ after_sucess:
     - docker build -t ncachulo/multi-nginx ./nginx
     - docker build -t ncachulo/multi-server ./server
     - docker build -t ncachulo/multi-worker ./worker
-  # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take those images and push them to docker hub
-  - docker push ncachulo/multi-client
-  - docker push ncachulo/multi-nginx
-  - docker push ncachulo/multi-server
-  - docker push ncachulo/multi-worker
+    # Log in to the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Take those images and push them to docker hub
+    - docker push ncachulo/multi-client
+    - docker push ncachulo/multi-nginx
+    - docker push ncachulo/multi-server
+    - docker push ncachulo/multi-worker
+  
